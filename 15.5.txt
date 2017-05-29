@@ -1,0 +1,41 @@
+create table student (id int,dept varchar);
+insert into student values(1,"cse");
+insert into student values(2,"eee");
+insert into student values(3,"ece");
+insert into student values(4,"it");
+insert into student values(5,"eie");
+insert into student values(6,"mech");
+insert into student values(7,"civil");
+
+
+
+
+
+
+sqoop import --connect jdbc:mysql://localhost:4403/s -username root --split-by id-p --table student --target-dir /user/acadgild/ --incremental append \ --check-column id \-- last -value 10 \ -m1;
+
+
+
+
+
+
+insert into employee values (3,"cse");
+insert into employee values(89,"hse");
+
+commit;
+
+sqoop import --conect jdbc:mysql://localhost/s \--username  -P --table student --incremental append  --check-column id  --last_value 12 -m1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
